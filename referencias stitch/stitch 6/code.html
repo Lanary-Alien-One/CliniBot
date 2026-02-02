@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#135bec",
+              "background-light": "#f6f6f8",
+              "background-dark": "#101622",
+            },
+            fontFamily: {
+              "display": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#0d121b] dark:text-white transition-colors duration-200">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Top Navigation Bar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-[#e7ebf3] dark:border-gray-800 bg-white dark:bg-background-dark px-10 py-3 sticky top-0 z-50">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 text-primary">
+<div class="size-8 flex items-center justify-center">
+<span class="material-symbols-outlined text-3xl">medical_services</span>
+</div>
+<h2 class="text-[#0d121b] dark:text-white text-xl font-bold leading-tight tracking-[-0.015em]">CliniBot</h2>
+</div>
+<label class="flex flex-col min-w-40 h-10 max-w-64">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full bg-[#e7ebf3] dark:bg-gray-800">
+<div class="text-[#4c669a] flex items-center justify-center pl-4">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 border-none bg-transparent focus:ring-0 h-full placeholder:text-[#4c669a] px-4 text-base font-normal" placeholder="Buscar reseñas..." value=""/>
+</div>
+</label>
+</div>
+<div class="flex flex-1 justify-end gap-8 items-center">
+<div class="flex items-center gap-9">
+<a class="text-[#0d121b] dark:text-gray-300 text-sm font-medium hover:text-primary transition-colors" href="#">Dashboard</a>
+<a class="text-primary text-sm font-bold border-b-2 border-primary pb-1" href="#">Reseñas Críticas</a>
+<a class="text-[#0d121b] dark:text-gray-300 text-sm font-medium hover:text-primary transition-colors" href="#">Análisis</a>
+<a class="text-[#0d121b] dark:text-gray-300 text-sm font-medium hover:text-primary transition-colors" href="#">Configuración</a>
+</div>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-primary/20" data-alt="User profile avatar placeholder" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuANPt0dHBr7MfpHoJxtAIazoOoAQzaZr1aUYNtPqmaMqh5sCrLUhNq1fyR-Ut-UQ2OAx3X5iFdNjL678gIeVh_3FuZFATZ6kAzwkxDN5hLxS1oENtIPHzaXh-VSYfNACVcnTqqgApzmQ4ac8If0Ep7S66PFmdvBPb-w2R2S8G65whz4qQNTb5Qzn45qfEKTDMDlgNQ8xpArErq76ZfgG6uJlq30huhVQfZUdMuWVyAz5Jv98g1p-si5sd8y1bimyJ3goTBGTcSVsgc");'></div>
+</div>
+</header>
+<main class="flex-1 px-40 py-8 flex justify-center">
+<div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+<!-- Title Section -->
+<div class="flex items-center gap-3 px-4">
+<span class="material-symbols-outlined text-orange-500 text-3xl">warning</span>
+<h1 class="text-[#0d121b] dark:text-white tracking-tight text-[32px] font-bold leading-tight">Validación de Reseñas Críticas</h1>
+</div>
+<!-- Progress Bar Section -->
+<div class="flex flex-col gap-3 p-4 mt-4 bg-white dark:bg-gray-900 rounded-xl shadow-sm border border-[#e7ebf3] dark:border-gray-800">
+<div class="flex gap-6 justify-between items-center">
+<p class="text-[#0d121b] dark:text-white text-base font-semibold">Estado del Flujo de Seguridad</p>
+<span class="px-2 py-1 bg-orange-100 text-orange-700 dark:bg-orange-900/30 dark:text-orange-400 text-xs font-bold rounded">VALIDACIÓN REQUERIDA</span>
+</div>
+<div class="flex justify-between text-xs font-medium text-[#4c669a] mb-1">
+<span>Pendiente</span>
+<span>Revisión IA</span>
+<span class="text-primary font-bold">Validación Admin</span>
+<span>Publicado</span>
+</div>
+<div class="rounded-full bg-[#cfd7e7] dark:bg-gray-700 h-2.5 overflow-hidden">
+<div class="h-full rounded-full bg-primary" style="width: 75%;"></div>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm text-primary">info</span>
+<p class="text-[#4c669a] text-sm font-normal">Paso 3 de 4: Revisión humana final obligatoria para casos críticos.</p>
+</div>
+</div>
+<!-- Main Review Card -->
+<div class="mt-6 p-4 @container">
+<div class="flex flex-col items-stretch justify-start rounded-xl @xl:flex-row @xl:items-start shadow-md bg-white dark:bg-gray-900 border-l-4 border-red-500 overflow-hidden">
+<div class="w-full @xl:w-1/3 bg-center bg-no-repeat aspect-video bg-cover" data-alt="Exterior of a modern medical clinic building" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDPCDdCr5evKVgecr1DpRRom0WzOgI_p-_ABKXmSAtxliF3XSPqq0HR-NFlpyubwKtCoHCfYWcIil2sTAFRnC58aqseQXeg_5vLMEv1TdFcHyKk1aW5O-J7wCifDCfap2yoKFJHGPLDl1pQ1gLfBk0DRi6wBx3u23gx0S6Rd8iMNARswxTDUYiw52kJsND-bOQ5xPRqqGeYdeOGApVnohS3IN57Z08MBUTfg3tjY9RMfkfn3-MzV4VV9HBrUpYytOusvOCy7qPCKuE");'></div>
+<div class="flex w-full grow flex-col items-stretch justify-center gap-3 p-6">
+<div class="flex justify-between items-start">
+<p class="text-red-600 dark:text-red-400 text-xs font-bold uppercase tracking-wider">Alerta: Nivel de Riesgo Alto</p>
+<div class="flex text-orange-400">
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm text-gray-300">star</span>
+<span class="material-symbols-outlined text-sm text-gray-300">star</span>
+<span class="material-symbols-outlined text-sm text-gray-300">star</span>
+<span class="material-symbols-outlined text-sm text-gray-300">star</span>
+</div>
+</div>
+<p class="text-[#0d121b] dark:text-white text-xl font-bold leading-tight">Paciente: Juan Pérez</p>
+<div class="bg-red-50 dark:bg-red-900/20 p-4 rounded-lg border border-red-100 dark:border-red-900/40">
+<p class="text-red-700 dark:text-red-300 text-base italic leading-relaxed">
+                                        "El servicio fue pésimo y la atención del personal muy lenta. Sentí que mi vida corría peligro por la negligencia de los médicos. No recomendaría esta clínica a nadie."
+                                    </p>
+</div>
+<p class="text-[#4c669a] text-xs">Publicado hace 2 horas • Google Maps</p>
+</div>
+</div>
+</div>
+<!-- System Insights -->
+<div class="mt-4 px-4">
+<h3 class="text-[#0d121b] dark:text-white text-lg font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">smart_toy</span>
+                            Comentarios de Revisión del Sistema
+                        </h3>
+<div class="mt-3 bg-primary/5 dark:bg-primary/10 border border-primary/20 p-4 rounded-lg">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary">notification_important</span>
+<div class="flex flex-col gap-1">
+<p class="text-[#0d121b] dark:text-white text-sm font-semibold italic">Detección Automática:</p>
+<p class="text-[#4c669a] text-sm">Esta reseña requiere doble validación porque contiene <span class="text-red-600 dark:text-red-400 font-bold">"lenguaje sensible"</span> (palabras clave: negligencia, peligro). Se recomienda una respuesta conciliadora que no admita responsabilidad legal pero muestre empatía inmediata.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Response Section -->
+<div class="grid grid-cols-2 gap-6 mt-8 px-4">
+<!-- AI Suggestion -->
+<div class="flex flex-col gap-3">
+<h4 class="text-sm font-bold text-[#4c669a] uppercase tracking-wide">Propuesta IA Inicial</h4>
+<div class="p-4 bg-gray-100 dark:bg-gray-800 rounded-lg border border-dashed border-gray-300 dark:border-gray-700 text-sm text-gray-600 dark:text-gray-400">
+                                "Lamentamos mucho su experiencia, Juan. En nuestra clínica nos tomamos muy en serio la seguridad de los pacientes. Por favor, contáctenos directamente al (555) 0123 para investigar su caso a fondo."
+                            </div>
+</div>
+<!-- Final Editor -->
+<div class="flex flex-col gap-3">
+<h4 class="text-sm font-bold text-primary uppercase tracking-wide">Editor de Respuesta Final</h4>
+<textarea class="w-full h-32 p-4 rounded-lg border border-primary/30 bg-white dark:bg-gray-800 text-sm focus:ring-primary focus:border-primary dark:text-white" placeholder="Redacte la respuesta definitiva...">Lamentamos profundamente su percepción de la atención recibida, Sr. Pérez. La seguridad es nuestra prioridad. Hemos iniciado un protocolo interno de revisión de su caso. Nos pondremos en contacto con usted de inmediato para escuchar sus inquietudes.</textarea>
+</div>
+</div>
+<!-- Action Footer -->
+<div class="mt-10 px-4 py-6 border-t border-gray-200 dark:border-gray-800 flex flex-col items-center gap-6">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-5 h-5 rounded text-primary border-gray-300 focus:ring-primary transition-all" type="checkbox"/>
+<span class="text-sm text-[#0d121b] dark:text-gray-300 font-medium group-hover:text-primary">Confirmo que esta respuesta cumple con los protocolos de salud y protección de datos.</span>
+</label>
+<div class="flex gap-4">
+<button class="px-8 py-3 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg text-sm font-bold text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">
+                                Guardar como Borrador
+                            </button>
+<button class="px-8 py-3 bg-green-600 hover:bg-green-700 text-white rounded-lg text-sm font-bold flex items-center gap-2 shadow-lg shadow-green-200 dark:shadow-none transition-all transform active:scale-95">
+<span class="material-symbols-outlined">publish</span>
+                                Aprobar y Publicar
+                            </button>
+</div>
+<p class="text-xs text-[#4c669a]">Solo el Administrador de Seguridad puede autorizar esta publicación.</p>
+</div>
+</div>
+</main>
+<!-- Footer Small -->
+<footer class="px-40 py-6 text-center text-[#4c669a] text-xs">
+                © 2024 CliniBot System - Security &amp; Compliance Module
+            </footer>
+</div>
+</div>
+</body></html>

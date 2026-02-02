@@ -1,0 +1,28 @@
+CREATE TABLE IF NOT EXISTS clinics (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(255) NOT NULL,
+  address TEXT,
+  gmb_location_id VARCHAR(255) UNIQUE,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS users (
+  id SERIAL PRIMARY KEY,
+  email VARCHAR(255) UNIQUE NOT NULL,
+  password_hash VARCHAR(255) NOT NULL,
+  role VARCHAR(50) DEFAULT 'admin',
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS reviews (
+  id VARCHAR(255) PRIMARY KEY, -- GMB Review ID
+  clinic_id INTEGER REFERENCES clinics(id),
+  reviewer_name VARCHAR(255),
+  rating INTEGER,
+  comment TEXT,
+  reply_text TEXT,
+  status VARCHAR(50) DEFAULT 'PENDING', -- PENDING, APPROVED, POSTED
+  ai_suggestion JSONB,
+  review_date TIMESTAMP,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

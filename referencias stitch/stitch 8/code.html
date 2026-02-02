@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Perfil Detallado de Clínica - CliniBot</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#135bec",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#0d121b] dark:text-white">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#e7ebf3] dark:border-b-gray-800 bg-white dark:bg-background-dark px-10 py-3">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 text-primary">
+<div class="size-6">
+<span class="material-symbols-outlined text-3xl">health_and_safety</span>
+</div>
+<h2 class="text-[#0d121b] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">CliniBot</h2>
+</div>
+<nav class="flex items-center gap-9">
+<a class="text-[#4c669a] dark:text-gray-400 hover:text-primary transition-colors text-sm font-medium leading-normal" href="#">Dashboard</a>
+<a class="text-primary text-sm font-bold leading-normal border-b-2 border-primary" href="#">Clínicas</a>
+<a class="text-[#4c669a] dark:text-gray-400 hover:text-primary transition-colors text-sm font-medium leading-normal" href="#">Informes</a>
+<a class="text-[#4c669a] dark:text-gray-400 hover:text-primary transition-colors text-sm font-medium leading-normal" href="#">Ajustes</a>
+</nav>
+</div>
+<div class="flex flex-1 justify-end gap-8 items-center">
+<label class="flex flex-col min-w-40 h-10 max-w-64">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+<div class="text-[#4c669a] flex border-none bg-[#e7ebf3] dark:bg-gray-800 items-center justify-center pl-4 rounded-l-lg border-r-0">
+<span class="material-symbols-outlined text-xl">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0d121b] dark:text-white focus:outline-0 focus:ring-0 border-none bg-[#e7ebf3] dark:bg-gray-800 focus:border-none h-full placeholder:text-[#4c669a] px-4 rounded-l-none border-l-0 pl-2 text-base font-normal leading-normal" placeholder="Buscar clínica..." value=""/>
+</div>
+</label>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-primary" data-alt="User avatar professional portrait" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDEf-f2bRvFeZvNU428TVsjkoD-XhjEliV5lkVeBSo5T4sPZ1M2qVB_kzK6Pzp00p3dC-O9Gmb-yOnQeK84y_2hDSv70KwI5Ky709e_yCiNkM39xzhwqPxQWi5mIDB0i1ZVOIrJr11I84uE0iHN1UgAXGrsgRaiC1fpu6DLVh-imvQ470x_RS__PbNU0PQkjzoGXHjYY88bXWuWXyG5S80SaIJKAEah0eWLPIh-tHIVAHkKxSSAymL3BD9hyGvq80zk3GcCzJ--mK8");'></div>
+</div>
+</header>
+<main class="flex-1 flex justify-center py-5">
+<div class="layout-content-container flex flex-col max-w-[1200px] flex-1 px-4">
+<div class="flex flex-wrap gap-2 py-2">
+<a class="text-[#4c669a] dark:text-gray-400 text-sm font-medium leading-normal" href="#">Clínicas</a>
+<span class="text-[#4c669a] dark:text-gray-400 text-sm font-medium leading-normal">/</span>
+<span class="text-[#0d121b] dark:text-white text-sm font-medium leading-normal">Perfil Detallado</span>
+</div>
+<div class="flex p-4 @container bg-white dark:bg-gray-900 rounded-xl shadow-sm border border-[#e7ebf3] dark:border-gray-800 mb-6">
+<div class="flex w-full flex-col gap-4 @[520px]:flex-row @[520px]:justify-between">
+<div class="flex gap-6 items-center">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-xl min-h-24 w-24 border border-gray-100" data-alt="Logo of dental clinic showing a blue tooth icon" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA8qEPGFWvrcu48SgPEPG9-7fk845SlkWk_YXD1ERY7sKRxtAIcG3pJ546XuRQUaxlIhwq4-0wepjYnfRCCGZRq1DSRqOFBauwD5HlipYFbMoxr0Og1j5ZQp4FP2xtikhVJvO896KPa6rAjiGrLcU4dzUgh9ib4Me3hSANPPQv32s2n304ypG9WgRKNHC3Skiz6s40-0MEOht7gxuhEVJaO6I37czUAhLGzTkocaqwBJKiYFQghS5yQh97NwA_ld4RoYSCxt_0p06w");'></div>
+<div class="flex flex-col">
+<h1 class="text-[#0d121b] dark:text-white text-2xl font-bold leading-tight tracking-[-0.015em]">Clínica Dental Sonrisas</h1>
+<p class="text-[#4c669a] dark:text-gray-400 text-base font-normal leading-normal flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">location_on</span> Calle Mayor 123, Madrid | <span class="material-symbols-outlined text-sm ml-2">call</span> +34 912 345 678
+                                    </p>
+<p class="text-[#4c669a] dark:text-gray-400 text-base font-normal leading-normal flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">person</span> Responsable: Dr. Alejandro García
+                                    </p>
+</div>
+</div>
+<div class="flex items-center">
+<button class="flex min-w-[120px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-6 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined mr-2 text-lg">edit</span>
+<span class="truncate">Editar Datos</span>
+</button>
+</div>
+</div>
+</div>
+<div class="flex flex-wrap gap-4 mb-6">
+<div class="flex min-w-[200px] flex-1 flex-col gap-2 rounded-xl p-6 border border-[#e7ebf3] dark:border-gray-800 bg-white dark:bg-gray-900 shadow-sm">
+<div class="flex justify-between items-start">
+<p class="text-[#4c669a] dark:text-gray-400 text-sm font-medium leading-normal uppercase tracking-wider">Valoración Media</p>
+<span class="material-symbols-outlined text-yellow-500">star</span>
+</div>
+<p class="text-[#0d121b] dark:text-white tracking-light text-3xl font-bold leading-tight">4.8 <span class="text-lg font-normal text-[#4c669a]">/ 5</span></p>
+<p class="text-[#07883b] text-sm font-bold leading-normal flex items-center">
+<span class="material-symbols-outlined text-sm mr-1">trending_up</span> +0.2 este mes
+                            </p>
+</div>
+<div class="flex min-w-[200px] flex-1 flex-col gap-2 rounded-xl p-6 border border-[#e7ebf3] dark:border-gray-800 bg-white dark:bg-gray-900 shadow-sm">
+<div class="flex justify-between items-start">
+<p class="text-[#4c669a] dark:text-gray-400 text-sm font-medium leading-normal uppercase tracking-wider">Total Reseñas</p>
+<span class="material-symbols-outlined text-blue-500">reviews</span>
+</div>
+<p class="text-[#0d121b] dark:text-white tracking-light text-3xl font-bold leading-tight">1,240</p>
+<p class="text-[#07883b] text-sm font-bold leading-normal flex items-center">
+<span class="material-symbols-outlined text-sm mr-1">add</span> 15% vs mes anterior
+                            </p>
+</div>
+<div class="flex min-w-[200px] flex-1 flex-col gap-2 rounded-xl p-6 border border-[#e7ebf3] dark:border-gray-800 bg-white dark:bg-gray-900 shadow-sm">
+<div class="flex justify-between items-start">
+<p class="text-[#4c669a] dark:text-gray-400 text-sm font-medium leading-normal uppercase tracking-wider">Sentimiento Positivo</p>
+<span class="material-symbols-outlined text-green-500">sentiment_very_satisfied</span>
+</div>
+<p class="text-[#0d121b] dark:text-white tracking-light text-3xl font-bold leading-tight">92%</p>
+<div class="w-full bg-gray-200 dark:bg-gray-700 h-1.5 rounded-full mt-1 overflow-hidden">
+<div class="bg-green-500 h-full w-[92%]"></div>
+</div>
+</div>
+<div class="flex min-w-[200px] flex-1 flex-col gap-2 rounded-xl p-6 border border-[#e7ebf3] dark:border-gray-800 bg-white dark:bg-gray-900 shadow-sm">
+<div class="flex justify-between items-start">
+<p class="text-[#4c669a] dark:text-gray-400 text-sm font-medium leading-normal uppercase tracking-wider">Tiempo Respuesta</p>
+<span class="material-symbols-outlined text-purple-500">timer</span>
+</div>
+<p class="text-[#0d121b] dark:text-white tracking-light text-3xl font-bold leading-tight">4h 15m</p>
+<p class="text-[#07883b] text-sm font-bold leading-normal flex items-center">
+<span class="material-symbols-outlined text-sm mr-1">arrow_downward</span> 30 min más rápido
+                            </p>
+</div>
+</div>
+<div class="flex flex-col lg:flex-row gap-6">
+<div class="flex-1 flex flex-col gap-6">
+<div class="bg-white dark:bg-gray-900 p-6 rounded-xl border border-[#e7ebf3] dark:border-gray-800 shadow-sm">
+<div class="flex justify-between items-center mb-6">
+<h2 class="text-[#0d121b] dark:text-white text-lg font-bold">Evolución (Últimos 3 meses)</h2>
+<div class="flex gap-4">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-primary"></span>
+<span class="text-xs text-[#4c669a] dark:text-gray-400 font-medium">Valoración</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-green-400"></span>
+<span class="text-xs text-[#4c669a] dark:text-gray-400 font-medium">Volumen</span>
+</div>
+</div>
+</div>
+<div class="w-full h-64 flex items-end justify-between px-4 pb-4 relative">
+<div class="absolute inset-0 flex flex-col justify-between py-4 pointer-events-none opacity-50">
+<div class="border-t border-dashed border-gray-200 dark:border-gray-700 w-full"></div>
+<div class="border-t border-dashed border-gray-200 dark:border-gray-700 w-full"></div>
+<div class="border-t border-dashed border-gray-200 dark:border-gray-700 w-full"></div>
+</div>
+<div class="relative w-12 bg-primary/20 rounded-t h-40 group">
+<div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 bg-gray-800 text-white text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">Reseñas: 42</div>
+<div class="absolute top-0 left-1/2 -translate-x-1/2 -mt-4 text-[10px] font-bold text-primary">4.6</div>
+</div>
+<div class="relative w-12 bg-primary/40 rounded-t h-48 group">
+<div class="absolute top-0 left-1/2 -translate-x-1/2 -mt-4 text-[10px] font-bold text-primary">4.7</div>
+</div>
+<div class="relative w-12 bg-primary/30 rounded-t h-32 group">
+<div class="absolute top-0 left-1/2 -translate-x-1/2 -mt-4 text-[10px] font-bold text-primary">4.5</div>
+</div>
+<div class="relative w-12 bg-primary/60 rounded-t h-56 group">
+<div class="absolute top-0 left-1/2 -translate-x-1/2 -mt-4 text-[10px] font-bold text-primary">4.8</div>
+</div>
+<div class="relative w-12 bg-primary/80 rounded-t h-60 group">
+<div class="absolute top-0 left-1/2 -translate-x-1/2 -mt-4 text-[10px] font-bold text-primary">4.9</div>
+</div>
+<div class="relative w-12 bg-primary rounded-t h-52 group">
+<div class="absolute top-0 left-1/2 -translate-x-1/2 -mt-4 text-[10px] font-bold text-primary">4.8</div>
+</div>
+</div>
+<div class="flex justify-between px-4 mt-2 text-xs text-[#4c669a] dark:text-gray-400 font-medium">
+<span>Oct 1-15</span>
+<span>Oct 16-31</span>
+<span>Nov 1-15</span>
+<span>Nov 16-30</span>
+<span>Dic 1-15</span>
+<span>Dic 16-31</span>
+</div>
+</div>
+<div class="bg-white dark:bg-gray-900 rounded-xl border border-[#e7ebf3] dark:border-gray-800 shadow-sm overflow-hidden">
+<div class="px-6 py-5 border-b border-[#e7ebf3] dark:border-gray-800 flex flex-wrap justify-between items-center gap-4">
+<h2 class="text-[#0d121b] dark:text-white text-lg font-bold">Últimas Reseñas</h2>
+<div class="flex gap-3">
+<select class="bg-[#f6f6f8] dark:bg-gray-800 border-none rounded-lg text-xs font-medium text-[#4c669a] dark:text-gray-300 focus:ring-primary h-9">
+<option>Todas las estrellas</option>
+<option>5 Estrellas</option>
+<option>4 Estrellas</option>
+<option>3 o menos</option>
+</select>
+<select class="bg-[#f6f6f8] dark:bg-gray-800 border-none rounded-lg text-xs font-medium text-[#4c669a] dark:text-gray-300 focus:ring-primary h-9">
+<option>Estado: Todos</option>
+<option>Pendiente</option>
+<option>Respondida</option>
+</select>
+</div>
+</div>
+<div class="divide-y divide-[#e7ebf3] dark:divide-gray-800">
+<div class="p-6">
+<div class="flex justify-between mb-2">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold text-xs">RM</div>
+<span class="font-bold text-sm">Ricardo Martínez</span>
+<span class="text-xs text-[#4c669a] dark:text-gray-400">hace 2 horas</span>
+</div>
+<div class="text-yellow-500 flex gap-0.5">
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+</div>
+</div>
+<p class="text-sm text-[#4c669a] dark:text-gray-300 mb-4">"Excelente trato y limpieza impecable. El Dr. Alejandro me explicó todo el proceso de la endodoncia y no sentí nada de dolor. Muy profesionales."</p>
+<div class="flex justify-between items-center">
+<span class="px-2.5 py-1 rounded-full bg-orange-100 text-orange-700 text-[10px] font-bold uppercase tracking-wider flex items-center gap-1">
+<span class="size-1.5 rounded-full bg-orange-500"></span> Pendiente
+                                            </span>
+<button class="text-primary text-xs font-bold flex items-center gap-1 hover:underline">
+                                                Responder ahora <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between mb-2">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 font-bold text-xs">LG</div>
+<span class="font-bold text-sm">Laura García</span>
+<span class="text-xs text-[#4c669a] dark:text-gray-400">hace 1 día</span>
+</div>
+<div class="text-yellow-500 flex gap-0.5">
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm text-gray-300">star</span>
+</div>
+</div>
+<p class="text-sm text-[#4c669a] dark:text-gray-300 mb-4">"El tratamiento de limpieza fue rápido pero tuve que esperar 30 minutos a pesar de tener cita. Por lo demás, todo muy bien."</p>
+<div class="flex justify-between items-center">
+<span class="px-2.5 py-1 rounded-full bg-green-100 text-green-700 text-[10px] font-bold uppercase tracking-wider flex items-center gap-1">
+<span class="size-1.5 rounded-full bg-green-500"></span> Respondida
+                                            </span>
+<span class="text-xs text-[#4c669a] dark:text-gray-400 italic">Respondida el 15/12/2023</span>
+</div>
+</div>
+</div>
+<div class="bg-gray-50 dark:bg-gray-800/50 p-4 text-center">
+<button class="text-primary text-sm font-bold hover:underline">Ver todas las reseñas</button>
+</div>
+</div>
+</div>
+<aside class="w-full lg:w-80 flex flex-col gap-6">
+<div class="bg-white dark:bg-gray-900 rounded-xl border border-[#e7ebf3] dark:border-gray-800 shadow-sm p-6">
+<h3 class="text-[#0d121b] dark:text-white text-base font-bold mb-4">Temas Recurrentes</h3>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1.5 bg-green-50 text-green-700 dark:bg-green-900/20 dark:text-green-400 rounded-lg text-sm font-medium border border-green-100 dark:border-green-800">Atención (45)</span>
+<span class="px-3 py-1.5 bg-blue-50 text-blue-700 dark:bg-blue-900/20 dark:text-blue-400 rounded-lg text-sm font-medium border border-blue-100 dark:border-blue-800">Limpieza (32)</span>
+<span class="px-3 py-1.5 bg-orange-50 text-orange-700 dark:bg-orange-900/20 dark:text-orange-400 rounded-lg text-sm font-medium border border-orange-100 dark:border-orange-800">Espera (18)</span>
+<span class="px-3 py-1.5 bg-primary/10 text-primary rounded-lg text-sm font-medium border border-primary/20">Instalaciones (12)</span>
+<span class="px-3 py-1.5 bg-gray-100 text-gray-600 dark:bg-gray-800 dark:text-gray-400 rounded-lg text-sm font-medium border border-gray-200 dark:border-gray-700">Precio (8)</span>
+<span class="px-3 py-1.5 bg-green-50 text-green-700 dark:bg-green-900/20 dark:text-green-400 rounded-lg text-sm font-medium border border-green-100 dark:border-green-800">Puntualidad (5)</span>
+</div>
+</div>
+<div class="bg-white dark:bg-gray-900 rounded-xl border border-[#e7ebf3] dark:border-gray-800 shadow-sm p-6">
+<h3 class="text-[#0d121b] dark:text-white text-base font-bold mb-4">Ranking de Tratamientos</h3>
+<div class="space-y-4">
+<div class="flex flex-col gap-1">
+<div class="flex justify-between text-sm mb-1">
+<span class="font-medium">Limpieza Dental</span>
+<span class="font-bold text-green-600">98% +</span>
+</div>
+<div class="w-full bg-gray-100 dark:bg-gray-800 h-2 rounded-full overflow-hidden">
+<div class="bg-green-500 h-full w-[98%]"></div>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex justify-between text-sm mb-1">
+<span class="font-medium">Implantes</span>
+<span class="font-bold text-green-600">94% +</span>
+</div>
+<div class="w-full bg-gray-100 dark:bg-gray-800 h-2 rounded-full overflow-hidden">
+<div class="bg-green-500 h-full w-[94%]"></div>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex justify-between text-sm mb-1">
+<span class="font-medium">Ortodoncia</span>
+<span class="font-bold text-green-600">89% +</span>
+</div>
+<div class="w-full bg-gray-100 dark:bg-gray-800 h-2 rounded-full overflow-hidden">
+<div class="bg-green-500 h-full w-[89%]"></div>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex justify-between text-sm mb-1">
+<span class="font-medium">Endodoncia</span>
+<span class="font-bold text-yellow-600">76% +</span>
+</div>
+<div class="w-full bg-gray-100 dark:bg-gray-800 h-2 rounded-full overflow-hidden">
+<div class="bg-yellow-500 h-full w-[76%]"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-primary/5 dark:bg-primary/10 rounded-xl border border-primary/20 p-6 flex flex-col gap-4">
+<div class="flex items-center gap-3 text-primary">
+<span class="material-symbols-outlined text-2xl">auto_awesome</span>
+<span class="font-bold text-sm">Resumen CliniBot AI</span>
+</div>
+<p class="text-xs leading-relaxed text-[#4c669a] dark:text-gray-300">
+                                    "Los pacientes valoran positivamente la comunicación del Dr. García, aunque se detecta un leve descontento recurrente en los tiempos de espera los lunes por la tarde."
+                                </p>
+</div>
+</aside>
+</div>
+</div>
+</main>
+</div>
+</div>
+</body></html>

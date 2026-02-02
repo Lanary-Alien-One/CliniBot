@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#135bec",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                        "critical": "#ef4444",
+                        "important": "#f97316",
+                        "info": "#3b82f6"
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .filled-icon {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen">
+<!-- TopNavBar -->
+<header class="sticky top-0 z-50 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 px-6 py-3">
+<div class="max-w-[1440px] mx-auto flex items-center justify-between">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-3">
+<div class="bg-primary text-white p-1.5 rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined filled-icon">medical_services</span>
+</div>
+<h2 class="text-xl font-bold tracking-tight">CliniBot</h2>
+</div>
+<div class="relative w-64 hidden md:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-slate-100 dark:bg-slate-800 border-none rounded-lg text-sm focus:ring-2 focus:ring-primary" placeholder="Buscar alertas..." type="text"/>
+</div>
+</div>
+<nav class="flex items-center gap-6">
+<a class="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-primary" href="#">Dashboard</a>
+<a class="text-sm font-medium text-primary border-b-2 border-primary pb-1" href="#">Alertas</a>
+<a class="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-primary" href="#">Reseñas</a>
+<div class="flex items-center gap-3 ml-4 pl-4 border-l border-slate-200 dark:border-slate-800">
+<button class="p-2 text-slate-600 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-critical rounded-full"></span>
+</button>
+<button class="flex items-center gap-2 p-1 pr-3 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition-colors">
+<div class="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-xs">JD</div>
+<span class="text-sm font-semibold">Dr. Javier</span>
+</button>
+</div>
+</nav>
+</div>
+</header>
+<div class="max-w-[1440px] mx-auto flex min-h-[calc(100vh-65px)]">
+<!-- SideNavBar -->
+<aside class="w-64 border-r border-slate-200 dark:border-slate-800 p-6 flex flex-col justify-between hidden lg:flex bg-white dark:bg-slate-900">
+<div class="space-y-8">
+<div>
+<h3 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-4">Estado Actual</h3>
+<div class="p-4 rounded-xl bg-critical/5 border border-critical/10">
+<p class="text-critical text-sm font-bold">3 Críticas pendientes</p>
+<p class="text-xs text-slate-500 mt-1">Requieren acción inmediata</p>
+</div>
+</div>
+<div class="space-y-1">
+<h3 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-4">Menú Alertas</h3>
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg" href="#">
+<span class="material-symbols-outlined">bar_chart</span>
+<span class="text-sm font-medium">Resumen</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 bg-primary/10 text-primary rounded-lg" href="#">
+<span class="material-symbols-outlined filled-icon">notification_important</span>
+<span class="text-sm font-semibold">Centro Alertas</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg" href="#">
+<span class="material-symbols-outlined">hub</span>
+<span class="text-sm font-medium">Canales</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg" href="#">
+<span class="material-symbols-outlined">history</span>
+<span class="text-sm font-medium">Historial</span>
+</a>
+</div>
+<div class="pt-4 border-t border-slate-100 dark:border-slate-800">
+<h3 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-4">Canales de Notificación</h3>
+<div class="space-y-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">mail</span>
+<span class="text-sm">Email</span>
+</div>
+<div class="w-8 h-4 bg-primary rounded-full relative">
+<div class="absolute right-0.5 top-0.5 w-3 h-3 bg-white rounded-full"></div>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">desktop_windows</span>
+<span class="text-sm">Escritorio</span>
+</div>
+<div class="w-8 h-4 bg-slate-300 dark:bg-slate-700 rounded-full relative">
+<div class="absolute left-0.5 top-0.5 w-3 h-3 bg-white rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<button class="flex items-center gap-3 px-3 py-2.5 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg mt-auto">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-sm font-medium">Configuración</span>
+</button>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col bg-background-light dark:bg-background-dark overflow-y-auto">
+<!-- PageHeading -->
+<div class="p-8 pb-0">
+<div class="flex flex-wrap justify-between items-end gap-4">
+<div class="space-y-1">
+<h1 class="text-3xl font-black tracking-tight">Centro de Notificaciones</h1>
+<p class="text-slate-500 dark:text-slate-400">Gestión de alertas críticas y reseñas de Google en tiempo real</p>
+</div>
+<button class="flex items-center gap-2 px-4 py-2.5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-sm font-bold hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors shadow-sm">
+<span class="material-symbols-outlined text-lg">done_all</span>
+                        Marcar todas como leídas
+                    </button>
+</div>
+<!-- Chips / Filters -->
+<div class="flex gap-3 py-6 overflow-x-auto no-scrollbar">
+<button class="flex items-center gap-2 px-3 py-1.5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-full text-sm font-medium shadow-sm whitespace-nowrap">
+<span>Todas las Clínicas</span>
+<span class="material-symbols-outlined text-lg">keyboard_arrow_down</span>
+</button>
+<button class="flex items-center gap-2 px-3 py-1.5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-full text-sm font-medium shadow-sm whitespace-nowrap">
+<span>Tipo de Evento</span>
+<span class="material-symbols-outlined text-lg">keyboard_arrow_down</span>
+</button>
+<button class="flex items-center gap-2 px-3 py-1.5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-full text-sm font-medium shadow-sm whitespace-nowrap">
+<span>Estado: Pendiente</span>
+<span class="material-symbols-outlined text-lg">keyboard_arrow_down</span>
+</button>
+<button class="flex items-center gap-2 px-3 py-1.5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-full text-sm font-medium shadow-sm whitespace-nowrap text-slate-400 italic">
+<span class="material-symbols-outlined text-lg">notifications_off</span>
+                        Silenciar Temporalmente
+                    </button>
+</div>
+</div>
+<!-- Dashboard Body -->
+<div class="flex flex-col xl:flex-row gap-8 px-8 pb-8">
+<!-- Notifications List -->
+<div class="flex-1 space-y-6">
+<!-- Critical Section -->
+<section>
+<h2 class="flex items-center gap-2 text-lg font-bold text-critical mb-4">
+<span class="material-symbols-outlined filled-icon">warning</span>
+                            Alertas Críticas (1 Estrella)
+                        </h2>
+<div class="space-y-4">
+<!-- Critical Card -->
+<div class="bg-white dark:bg-slate-900 border-l-4 border-critical rounded-xl shadow-sm overflow-hidden p-5">
+<div class="flex justify-between items-start gap-4">
+<div class="flex-1">
+<div class="flex items-center gap-3 mb-2">
+<div class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center font-bold text-slate-600">RM</div>
+<div>
+<h4 class="font-bold text-slate-900 dark:text-white">Ricardo Mendoza</h4>
+<div class="flex items-center gap-1 text-critical">
+<span class="material-symbols-outlined filled-icon text-xs">star</span>
+<span class="text-xs font-bold uppercase tracking-widest">1/5 Estrellas</span>
+</div>
+</div>
+<span class="ml-auto text-xs font-medium text-slate-400 bg-slate-50 dark:bg-slate-800 px-2 py-1 rounded">Hace 15 min</span>
+</div>
+<p class="text-sm text-slate-600 dark:text-slate-300 italic mb-4">
+                                            "Pésima atención en recepción. Estuve esperando más de una hora a pesar de tener cita confirmada. Nadie me dio explicaciones."
+                                        </p>
+<div class="flex items-center gap-3">
+<button class="bg-primary text-white text-sm font-bold px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors flex items-center gap-2">
+                                                Ir a Validación
+                                                <span class="material-symbols-outlined text-base">arrow_forward</span>
+</button>
+<button class="text-slate-500 hover:text-slate-800 dark:hover:text-white text-sm font-medium px-3 py-2">Descartar</button>
+</div>
+</div>
+<div class="bg-slate-50 dark:bg-slate-800 p-2 rounded-lg text-center min-w-[100px]">
+<span class="text-[10px] uppercase font-bold text-slate-400 block mb-1">Sucursal</span>
+<span class="text-xs font-bold">Clínica Central</span>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 border-l-4 border-critical rounded-xl shadow-sm overflow-hidden p-5">
+<div class="flex justify-between items-start gap-4">
+<div class="flex-1">
+<div class="flex items-center gap-3 mb-2">
+<div class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center font-bold text-slate-600">LP</div>
+<div>
+<h4 class="font-bold text-slate-900 dark:text-white">Lucía Pardo</h4>
+<div class="flex items-center gap-1 text-critical">
+<span class="material-symbols-outlined filled-icon text-xs">star</span>
+<span class="text-xs font-bold uppercase tracking-widest">1/5 Estrellas</span>
+</div>
+</div>
+<span class="ml-auto text-xs font-medium text-slate-400 bg-slate-50 dark:bg-slate-800 px-2 py-1 rounded">Hace 42 min</span>
+</div>
+<p class="text-sm text-slate-600 dark:text-slate-300 italic mb-4">
+                                            "El doctor fue muy grosero. No me dejó terminar de explicar mis síntomas."
+                                        </p>
+<div class="flex items-center gap-3">
+<button class="bg-primary text-white text-sm font-bold px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors flex items-center gap-2">
+                                                Ir a Validación
+                                                <span class="material-symbols-outlined text-base">arrow_forward</span>
+</button>
+<button class="text-slate-500 hover:text-slate-800 dark:hover:text-white text-sm font-medium px-3 py-2">Descartar</button>
+</div>
+</div>
+<div class="bg-slate-50 dark:bg-slate-800 p-2 rounded-lg text-center min-w-[100px]">
+<span class="text-[10px] uppercase font-bold text-slate-400 block mb-1">Sucursal</span>
+<span class="text-xs font-bold">Sucursal Norte</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Important Section -->
+<section>
+<h2 class="flex items-center gap-2 text-lg font-bold text-important mb-4">
+<span class="material-symbols-outlined filled-icon">error</span>
+                            Alertas Importantes
+                        </h2>
+<div class="bg-white dark:bg-slate-900 border-l-4 border-important rounded-xl shadow-sm p-4 flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="p-2 bg-important/10 text-important rounded-lg">
+<span class="material-symbols-outlined">trending_down</span>
+</div>
+<div>
+<h4 class="font-bold text-sm">Caída en valoración media</h4>
+<p class="text-xs text-slate-500">Clínica Sur bajó de 4.2 a 3.8 estrellas esta semana</p>
+</div>
+</div>
+<button class="text-primary text-xs font-bold uppercase tracking-wider">Analizar</button>
+</div>
+</section>
+<!-- Informative Section -->
+<section>
+<h2 class="flex items-center gap-2 text-lg font-bold text-info mb-4">
+<span class="material-symbols-outlined filled-icon">info</span>
+                            Informativas
+                        </h2>
+<div class="bg-white dark:bg-slate-900 border-l-4 border-info rounded-xl shadow-sm p-4 flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="p-2 bg-info/10 text-info rounded-lg">
+<span class="material-symbols-outlined">reviews</span>
+</div>
+<div>
+<h4 class="font-bold text-sm">Nuevas reseñas positivas</h4>
+<p class="text-xs text-slate-500">Has recibido 12 nuevas reseñas de 5 estrellas hoy</p>
+</div>
+</div>
+<span class="text-xs text-slate-400 font-medium">Hace 2 horas</span>
+</div>
+</section>
+</div>
+<!-- Right Sidebar / Summary Alertas -->
+<div class="w-full xl:w-80 space-y-6">
+<div class="bg-white dark:bg-slate-900 rounded-xl shadow-sm p-6">
+<h3 class="font-bold mb-4">Volumen de Alertas</h3>
+<div class="h-48 flex items-end justify-between gap-2 px-2">
+<div class="flex-1 bg-slate-100 dark:bg-slate-800 rounded-t h-[30%] relative group">
+<div class="absolute inset-x-0 bottom-0 bg-primary/20 rounded-t h-full"></div>
+<span class="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[10px] font-bold text-slate-400">Lun</span>
+</div>
+<div class="flex-1 bg-slate-100 dark:bg-slate-800 rounded-t h-[55%] relative group">
+<div class="absolute inset-x-0 bottom-0 bg-primary/40 rounded-t h-full"></div>
+<span class="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[10px] font-bold text-slate-400">Mar</span>
+</div>
+<div class="flex-1 bg-slate-100 dark:bg-slate-800 rounded-t h-[40%] relative group">
+<div class="absolute inset-x-0 bottom-0 bg-primary/30 rounded-t h-full"></div>
+<span class="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[10px] font-bold text-slate-400">Mie</span>
+</div>
+<div class="flex-1 bg-slate-100 dark:bg-slate-800 rounded-t h-[90%] relative group">
+<div class="absolute inset-x-0 bottom-0 bg-critical/60 rounded-t h-full"></div>
+<span class="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[10px] font-bold text-slate-400">Jue</span>
+</div>
+<div class="flex-1 bg-slate-100 dark:bg-slate-800 rounded-t h-[70%] relative group">
+<div class="absolute inset-x-0 bottom-0 bg-primary/60 rounded-t h-full"></div>
+<span class="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[10px] font-bold text-slate-400">Vie</span>
+</div>
+<div class="flex-1 bg-slate-100 dark:bg-slate-800 rounded-t h-[20%] relative group">
+<div class="absolute inset-x-0 bottom-0 bg-primary/10 rounded-t h-full"></div>
+<span class="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[10px] font-bold text-slate-400">Sab</span>
+</div>
+<div class="flex-1 bg-slate-100 dark:bg-slate-800 rounded-t h-[15%] relative group">
+<div class="absolute inset-x-0 bottom-0 bg-primary/10 rounded-t h-full"></div>
+<span class="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[10px] font-bold text-slate-400">Dom</span>
+</div>
+</div>
+<div class="mt-10 pt-4 border-t border-slate-100 dark:border-slate-800">
+<div class="flex items-center justify-between mb-2">
+<span class="text-xs text-slate-500">Tasa de respuesta</span>
+<span class="text-xs font-bold">84%</span>
+</div>
+<div class="w-full bg-slate-100 dark:bg-slate-800 h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[84%]"></div>
+</div>
+</div>
+</div>
+<div class="bg-primary text-white rounded-xl shadow-lg shadow-primary/20 p-6 overflow-hidden relative">
+<div class="relative z-10">
+<h4 class="font-bold text-lg mb-2">Modo Urgente Activo</h4>
+<p class="text-white/80 text-xs mb-4 leading-relaxed">Estás recibiendo alertas de 1 estrella instantáneamente vía escritorio y móvil.</p>
+<button class="w-full py-2 bg-white text-primary font-bold rounded-lg text-sm shadow-sm">
+                                Configurar Alertas
+                            </button>
+</div>
+<span class="material-symbols-outlined absolute -right-4 -bottom-4 text-white/10 text-9xl">bolt</span>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CliniBot: Panel de Control General</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#135bec",
+              "background-light": "#f6f6f8",
+              "background-dark": "#101622",
+            },
+            fontFamily: {
+              "display": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .donut-segment {
+            transform-origin: center;
+        }
+        .heatmap-grid {
+            display: grid;
+            grid-template-columns: repeat(10, 1fr);
+            gap: 4px;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display transition-colors duration-200">
+<header class="sticky top-0 z-50 w-full bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+<span class="material-icons text-white">health_and_safety</span>
+</div>
+<div>
+<h1 class="text-xl font-bold tracking-tight text-slate-900 dark:text-white leading-none">CliniBot</h1>
+<span class="text-xs font-medium text-slate-500 uppercase tracking-widest">Portal de Análisis</span>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden md:flex items-center gap-2 bg-slate-100 dark:bg-slate-800 px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700">
+<span class="material-icons text-slate-400 text-sm">calendar_today</span>
+<span class="text-sm font-medium text-slate-600 dark:text-slate-300">Últimos 7 Días</span>
+</div>
+<button class="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg font-semibold text-sm flex items-center gap-2 transition-all">
+<span class="material-icons text-sm">picture_as_pdf</span>
+                Descargar Informe Semanal PDF
+            </button>
+<div class="h-8 w-8 rounded-full bg-slate-200 dark:bg-slate-700 overflow-hidden border border-slate-200 dark:border-slate-600">
+<img alt="Perfil de Usuario" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDox-rMYU3yg8z0C1v_4y3UrvM0CsyXSTMWCl6MZpS1IOc5rO52NcGKRhFG-l_PV3hKcBdLRKJs1ZUyrXoaC0aJaLylnyC_yHY6WERdxe8lEqzck3aIrpgVVKm5ttbonAErOwBtmaVq73WJ1NErILkFzN61sO4P3EJFtI05OLQ7Nh-P87EZ_zgsYRz9utgKGS9mmfcMrhJT9JQ-L5BPLOHGKVdJsKmCrUSStrKAQmqQuKIfKJdoUcHwZTlu-4H-cRAieNY77KHfxtQ"/>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+<div class="bg-white dark:bg-slate-900 p-5 rounded-xl border border-slate-200 dark:border-slate-800">
+<p class="text-xs font-semibold text-slate-500 uppercase">Total de Reseñas</p>
+<h3 class="text-2xl font-bold mt-1">1,284</h3>
+<div class="flex items-center mt-2 text-emerald-500 text-xs font-medium">
+<span class="material-icons text-xs">trending_up</span>
+<span class="ml-1">+12% desde la semana pasada</span>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 p-5 rounded-xl border border-slate-200 dark:border-slate-800">
+<p class="text-xs font-semibold text-slate-500 uppercase">Calificación Promedio</p>
+<h3 class="text-2xl font-bold mt-1">4.7 <span class="text-slate-400 text-lg font-normal">/ 5.0</span></h3>
+<div class="flex items-center mt-2 text-emerald-500 text-xs font-medium">
+<span class="material-icons text-xs">star</span>
+<span class="ml-1">La más alta este mes</span>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 p-5 rounded-xl border border-slate-200 dark:border-slate-800">
+<p class="text-xs font-semibold text-slate-500 uppercase">Tasa de Respuesta</p>
+<h3 class="text-2xl font-bold mt-1">94.2%</h3>
+<div class="flex items-center mt-2 text-emerald-500 text-xs font-medium">
+<span class="material-icons text-xs">check_circle</span>
+<span class="ml-1">Objetivo alcanzado</span>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 p-5 rounded-xl border border-slate-200 dark:border-slate-800">
+<p class="text-xs font-semibold text-slate-500 uppercase">Alertas Negativas</p>
+<h3 class="text-2xl font-bold mt-1 text-rose-500">12</h3>
+<div class="flex items-center mt-2 text-rose-500 text-xs font-medium">
+<span class="material-icons text-xs">warning</span>
+<span class="ml-1">Requiere atención</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 lg:col-span-1 shadow-sm">
+<div class="flex items-center justify-between mb-6">
+<h3 class="font-bold text-slate-800 dark:text-white">Análisis de Sentimiento</h3>
+<span class="material-icons text-slate-400 cursor-pointer">info_outline</span>
+</div>
+<div class="relative flex items-center justify-center py-6">
+<svg class="w-48 h-48" viewBox="0 0 36 36">
+<circle class="dark:stroke-slate-800" cx="18" cy="18" fill="transparent" r="16" stroke="#f1f5f9" stroke-width="3"></circle>
+<circle class="donut-segment" cx="18" cy="18" fill="transparent" r="16" stroke="#135bec" stroke-dasharray="75, 100" stroke-dashoffset="25" stroke-width="3"></circle>
+<circle class="donut-segment" cx="18" cy="18" fill="transparent" r="16" stroke="#fbbf24" stroke-dasharray="15, 100" stroke-dashoffset="50" stroke-width="3"></circle>
+<circle class="donut-segment" cx="18" cy="18" fill="transparent" r="16" stroke="#f43f5e" stroke-dasharray="10, 100" stroke-dashoffset="65" stroke-width="3"></circle>
+</svg>
+<div class="absolute text-center">
+<span class="block text-2xl font-bold">1,284</span>
+<span class="text-[10px] uppercase font-bold text-slate-400 tracking-wider">Total</span>
+</div>
+</div>
+<div class="mt-8 space-y-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-primary"></span>
+<span class="text-sm font-medium">Positivo</span>
+</div>
+<span class="text-sm font-bold">75%</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-amber-400"></span>
+<span class="text-sm font-medium">Neutral</span>
+</div>
+<span class="text-sm font-bold">15%</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-rose-500"></span>
+<span class="text-sm font-medium">Negativo</span>
+</div>
+<span class="text-sm font-bold">10%</span>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 lg:col-span-2 shadow-sm">
+<div class="flex items-center justify-between mb-6">
+<div>
+<h3 class="font-bold text-slate-800 dark:text-white">Mapa de Calor de Rendimiento</h3>
+<p class="text-xs text-slate-500">Correlación entre Volumen de Reseñas y Calificación</p>
+</div>
+<div class="flex gap-2 items-center text-[10px] font-bold uppercase text-slate-400">
+<span>Calificación Baja</span>
+<div class="flex h-2 w-24 rounded-full bg-gradient-to-r from-rose-500 via-amber-400 to-emerald-500"></div>
+<span>Calificación Alta</span>
+</div>
+</div>
+<div class="h-64 flex flex-col justify-between">
+<div class="flex-1 heatmap-grid">
+<div class="bg-emerald-500 rounded-sm opacity-20 hover:opacity-100 transition-opacity" title="Clínica A: 4.9/5"></div>
+<div class="bg-emerald-400 rounded-sm opacity-60"></div>
+<div class="bg-emerald-300 rounded-sm opacity-80"></div>
+<div class="bg-emerald-500 rounded-sm opacity-40"></div>
+<div class="bg-amber-400 rounded-sm opacity-90"></div>
+<div class="bg-rose-400 rounded-sm opacity-50"></div>
+<div class="bg-emerald-600 rounded-sm opacity-70"></div>
+<div class="bg-emerald-500 rounded-sm opacity-30"></div>
+<div class="bg-emerald-400 rounded-sm opacity-85"></div>
+<div class="bg-emerald-500 rounded-sm opacity-60"></div>
+<div class="bg-emerald-500 rounded-sm opacity-40"></div>
+<div class="bg-amber-300 rounded-sm opacity-60"></div>
+<div class="bg-rose-500 rounded-sm opacity-100"></div>
+<div class="bg-emerald-400 rounded-sm opacity-80"></div>
+<div class="bg-emerald-200 rounded-sm opacity-50"></div>
+<div class="bg-amber-400 rounded-sm opacity-40"></div>
+<div class="bg-emerald-500 rounded-sm opacity-60"></div>
+<div class="bg-emerald-600 rounded-sm opacity-90"></div>
+<div class="bg-rose-300 rounded-sm opacity-40"></div>
+<div class="bg-emerald-400 rounded-sm opacity-20"></div>
+<div class="bg-emerald-500 rounded-sm opacity-90"></div>
+<div class="bg-emerald-300 rounded-sm opacity-50"></div>
+<div class="bg-amber-500 rounded-sm opacity-30"></div>
+<div class="bg-emerald-400 rounded-sm opacity-70"></div>
+<div class="bg-emerald-600 rounded-sm opacity-100"></div>
+<div class="bg-rose-500 rounded-sm opacity-40"></div>
+<div class="bg-emerald-500 rounded-sm opacity-80"></div>
+<div class="bg-emerald-400 rounded-sm opacity-60"></div>
+<div class="bg-emerald-300 rounded-sm opacity-90"></div>
+<div class="bg-emerald-500 rounded-sm opacity-45"></div>
+<div class="bg-emerald-400 rounded-sm opacity-30"></div>
+<div class="bg-emerald-500 rounded-sm opacity-85"></div>
+<div class="bg-emerald-600 rounded-sm opacity-60"></div>
+<div class="bg-rose-400 rounded-sm opacity-50"></div>
+<div class="bg-amber-300 rounded-sm opacity-90"></div>
+<div class="bg-emerald-500 rounded-sm opacity-75"></div>
+<div class="bg-emerald-400 rounded-sm opacity-20"></div>
+<div class="bg-emerald-300 rounded-sm opacity-65"></div>
+<div class="bg-emerald-500 rounded-sm opacity-40"></div>
+<div class="bg-emerald-600 rounded-sm opacity-95"></div>
+<div class="bg-emerald-300 rounded-sm opacity-50"></div>
+<div class="bg-emerald-400 rounded-sm opacity-90"></div>
+<div class="bg-emerald-500 rounded-sm opacity-25"></div>
+<div class="bg-amber-500 rounded-sm opacity-60"></div>
+<div class="bg-emerald-600 rounded-sm opacity-80"></div>
+<div class="bg-emerald-500 rounded-sm opacity-40"></div>
+<div class="bg-rose-500 rounded-sm opacity-30"></div>
+<div class="bg-emerald-400 rounded-sm opacity-100"></div>
+<div class="bg-emerald-300 rounded-sm opacity-55"></div>
+<div class="bg-emerald-500 rounded-sm opacity-70"></div>
+</div>
+<div class="flex justify-between mt-4 border-t border-slate-100 dark:border-slate-800 pt-3 text-[10px] font-bold text-slate-400 uppercase tracking-tighter">
+<span>Volumen Bajo</span>
+<span>Volumen Medio</span>
+<span>Volumen Alto</span>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden">
+<div class="px-6 py-4 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between">
+<h3 class="font-bold text-slate-800 dark:text-white">Vista General de Clínicas</h3>
+<div class="flex gap-2">
+<div class="relative">
+<span class="material-icons absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm">search</span>
+<input class="pl-9 pr-4 py-1.5 text-sm bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-lg focus:ring-primary focus:border-primary w-64" placeholder="Buscar clínica..." type="text"/>
+</div>
+<button class="flex items-center gap-1 px-3 py-1.5 text-sm font-medium bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-slate-600 dark:text-slate-300">
+<span class="material-icons text-sm">filter_list</span>
+                    Filtrar
+                </button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="bg-slate-50 dark:bg-slate-800/50">
+<tr>
+<th class="px-6 py-3 text-[10px] font-bold text-slate-500 uppercase tracking-wider">Nombre de la Clínica</th>
+<th class="px-6 py-3 text-[10px] font-bold text-slate-500 uppercase tracking-wider">Ubicación</th>
+<th class="px-6 py-3 text-[10px] font-bold text-slate-500 uppercase tracking-wider text-center">Total de Reseñas</th>
+<th class="px-6 py-3 text-[10px] font-bold text-slate-500 uppercase tracking-wider">% Positivo</th>
+<th class="px-6 py-3 text-[10px] font-bold text-slate-500 uppercase tracking-wider">Tendencia</th>
+<th class="px-6 py-3 text-[10px] font-bold text-slate-500 uppercase tracking-wider text-right">Acciones</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-200 dark:divide-slate-800">
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors">
+<td class="px-6 py-4">
+<div class="font-semibold text-slate-800 dark:text-slate-200">Downtown Health Center</div>
+<div class="text-[10px] text-slate-400 font-medium">ID: CLN-402</div>
+</td>
+<td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-400">San Francisco, CA</td>
+<td class="px-6 py-4 text-center font-bold">482</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="flex-1 h-1.5 w-24 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 92%"></div>
+</div>
+<span class="text-sm font-bold text-slate-700 dark:text-slate-300">92%</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="material-icons text-emerald-500">trending_up</span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-primary hover:text-primary/80 font-semibold text-sm">Ver Detalles</button>
+</td>
+</tr>
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors">
+<td class="px-6 py-4">
+<div class="font-semibold text-slate-800 dark:text-slate-200">Eastside Pediatrics</div>
+<div class="text-[10px] text-slate-400 font-medium">ID: CLN-105</div>
+</td>
+<td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-400">Oakland, CA</td>
+<td class="px-6 py-4 text-center font-bold">215</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="flex-1 h-1.5 w-24 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 88%"></div>
+</div>
+<span class="text-sm font-bold text-slate-700 dark:text-slate-300">88%</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="material-icons text-amber-500">trending_flat</span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-primary hover:text-primary/80 font-semibold text-sm">Ver Detalles</button>
+</td>
+</tr>
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors">
+<td class="px-6 py-4">
+<div class="font-semibold text-slate-800 dark:text-slate-200">Northside Urgent Care</div>
+<div class="text-[10px] text-slate-400 font-medium">ID: CLN-221</div>
+</td>
+<td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-400">Marin, CA</td>
+<td class="px-6 py-4 text-center font-bold">156</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="flex-1 h-1.5 w-24 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+<div class="bg-rose-500 h-full rounded-full" style="width: 64%"></div>
+</div>
+<span class="text-sm font-bold text-slate-700 dark:text-slate-300">64%</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="material-icons text-rose-500">trending_down</span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-primary hover:text-primary/80 font-semibold text-sm">Ver Detalles</button>
+</td>
+</tr>
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors">
+<td class="px-6 py-4">
+<div class="font-semibold text-slate-800 dark:text-slate-200">Sunset Boulevard Dental</div>
+<div class="text-[10px] text-slate-400 font-medium">ID: CLN-984</div>
+</td>
+<td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-400">Los Angeles, CA</td>
+<td class="px-6 py-4 text-center font-bold">390</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="flex-1 h-1.5 w-24 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 95%"></div>
+</div>
+<span class="text-sm font-bold text-slate-700 dark:text-slate-300">95%</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="material-icons text-emerald-500">trending_up</span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-primary hover:text-primary/80 font-semibold text-sm">Ver Detalles</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="px-6 py-4 bg-slate-50 dark:bg-slate-800/50 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between">
+<p class="text-xs text-slate-500 font-medium">Mostrando 4 de 42 clínicas</p>
+<div class="flex gap-2">
+<button class="px-3 py-1 text-xs font-semibold bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded disabled:opacity-50" disabled="">Anterior</button>
+<button class="px-3 py-1 text-xs font-semibold bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded">Siguiente</button>
+</div>
+</div>
+</div>
+</main>
+<footer class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 border-t border-slate-200 dark:border-slate-800 mt-8">
+<div class="flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-xs text-slate-500">© 2023 CliniBot Sistema de Gestión de Redes. Todos los derechos reservados.</p>
+<div class="flex gap-6">
+<a class="text-xs text-slate-500 hover:text-primary transition-colors" href="#">Política de Privacidad</a>
+<a class="text-xs text-slate-500 hover:text-primary transition-colors" href="#">Términos de Servicio</a>
+<a class="text-xs text-slate-500 hover:text-primary transition-colors" href="#">Portal de Soporte</a>
+</div>
+</div>
+</footer>
+
+</body></html>

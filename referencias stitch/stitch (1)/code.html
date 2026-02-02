@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CliniBot - Vista Detallada de Clínica</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#135bec",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .star-filled {
+            font-variation-settings: 'FILL' 1;
+            color: #fbbf24;
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #101622;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #232f48;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #135bec;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 bg-white dark:bg-background-dark px-10 py-3 sticky top-0 z-50">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 text-primary">
+<div class="size-8 flex items-center justify-center bg-primary/10 rounded-lg">
+<span class="material-symbols-outlined text-primary">health_metrics</span>
+</div>
+<h2 class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">CliniBot</h2>
+</div>
+<label class="flex flex-col min-w-40 !h-10 max-w-64">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full overflow-hidden border border-slate-200 dark:border-slate-800">
+<div class="text-slate-400 flex bg-slate-50 dark:bg-[#192233] items-center justify-center pl-4">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden text-slate-900 dark:text-white focus:outline-0 focus:ring-0 border-none bg-slate-50 dark:bg-[#192233] focus:border-none h-full placeholder:text-slate-400 px-4 pl-2 text-sm font-normal" placeholder="Buscar clínicas..." value=""/>
+</div>
+</label>
+</div>
+<div class="flex flex-1 justify-end gap-6 items-center">
+<nav class="flex items-center gap-6">
+<a class="text-primary text-sm font-semibold leading-normal border-b-2 border-primary py-1" href="#">Clínicas</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-primary text-sm font-medium leading-normal transition-colors" href="#">Analíticas</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-primary text-sm font-medium leading-normal transition-colors" href="#">Configuración</a>
+</nav>
+<div class="h-6 w-px bg-slate-200 dark:border-slate-800"></div>
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-slate-100 dark:bg-[#232f48] text-slate-600 dark:text-white hover:bg-primary/10 hover:text-primary transition-all">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+</button>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-primary/20" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA8OiVHsfYrvxXhZF6d5KYIRnusGqllGO5tAbL5CgLZHKycY90Y2tD0_Lv4KfQI7EhEZ63wgjArBson3dM8NpHNFKONpY7ky5FaNUlEQ4SweO-CGwelcscNMKAPXe3RAIxnwkWPanQMnffK8aAnPwEmdiObPHcOgVZ8vmFMa7ENopBC4ZFiwdlUIAY4FOXW8aKhJOneB_G5hU4lFyNlh7YHGNE9JVpJwyTzUXM1tR1wHlNVtAb9QDwqGTnAnlBpoPDayRPnn_cMBT8");'></div>
+</div>
+</header>
+<main class="max-w-[1400px] mx-auto px-6 py-8">
+<div class="flex flex-wrap justify-between items-start gap-3 mb-8">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-3">
+<h1 class="text-slate-900 dark:text-white text-3xl font-black leading-tight tracking-[-0.033em]">Centro Médico Ciudad</h1>
+<span class="bg-emerald-500/10 text-emerald-500 text-xs font-bold px-2.5 py-1 rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] star-filled">star</span> 4.8
+                </span>
+</div>
+<div class="flex items-center gap-2 text-slate-500 dark:text-slate-400 text-sm">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+<p>123 Healthcare Plaza, Suite 400, Distrito Médico</p>
+</div>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center gap-2 px-4 py-2 bg-slate-100 dark:bg-[#232f48] text-slate-700 dark:text-white text-sm font-bold rounded-lg hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
+<span class="material-symbols-outlined text-[18px]">map</span>
+<span>Ver en Google Maps</span>
+</button>
+<button class="flex items-center gap-2 px-4 py-2 bg-primary text-white text-sm font-bold rounded-lg hover:bg-blue-700 transition-colors shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span>Exportar Datos</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<div class="lg:col-span-8 flex flex-col gap-6">
+<div class="bg-white dark:bg-[#192233] p-4 rounded-xl border border-slate-200 dark:border-slate-800 flex flex-wrap gap-4 items-end shadow-sm">
+<div class="flex-1 min-w-[200px]">
+<p class="text-slate-500 dark:text-slate-400 text-xs font-bold uppercase tracking-wider mb-2">Tratamiento</p>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-[18px]">search</span>
+<select class="form-input w-full pl-10 pr-4 py-2 rounded-lg text-sm bg-slate-50 dark:bg-[#101622] border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white focus:ring-primary">
+<option>Todos los tratamientos</option>
+<option>Chequeo General</option>
+<option>Cardiología</option>
+<option>Odontología</option>
+<option>Fisioterapia</option>
+</select>
+</div>
+</div>
+<div class="w-48">
+<p class="text-slate-500 dark:text-slate-400 text-xs font-bold uppercase tracking-wider mb-2">Rango de fechas</p>
+<button class="w-full flex items-center justify-between px-4 py-2 rounded-lg text-sm bg-slate-50 dark:bg-[#101622] border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-white">
+<span>Últimos 30 días</span>
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+</button>
+</div>
+<div class="flex flex-col gap-2">
+<p class="text-slate-500 dark:text-slate-400 text-xs font-bold uppercase tracking-wider mb-2">Valoración</p>
+<div class="flex gap-2">
+<button class="h-9 px-3 rounded-lg border border-primary bg-primary/10 text-primary text-xs font-bold flex items-center gap-1">
+                            5 Estrellas <span class="material-symbols-outlined text-[14px]">close</span>
+</button>
+<button class="h-9 px-3 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-[#101622] text-slate-500 dark:text-slate-400 text-xs font-bold hover:border-primary transition-colors">
+                            4 Estrellas
+                        </button>
+<button class="h-9 w-9 flex items-center justify-center rounded-lg bg-slate-100 dark:bg-[#232f48] text-slate-500">
+<span class="material-symbols-outlined text-[20px]">filter_list</span>
+</button>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-[#192233] rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden">
+<div class="px-6 py-4 border-b border-slate-200 dark:border-slate-800 flex justify-between items-center">
+<h3 class="font-bold text-slate-900 dark:text-white">Reseñas del Día</h3>
+<span class="text-xs text-slate-500 dark:text-slate-400">Mostrando 24 de 1,240 reseñas</span>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-slate-50 dark:bg-[#101622]">
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Fecha</th>
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Usuario</th>
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Valoración</th>
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Texto de la Reseña</th>
+<th class="px-6 py-4"></th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+<tr class="hover:bg-slate-50 dark:hover:bg-[#101622]/50 transition-colors group">
+<td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-300">24 Oct, 2023</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="h-8 w-8 rounded-full bg-indigo-500 flex items-center justify-center text-[10px] font-bold text-white uppercase">JD</div>
+<span class="text-sm font-semibold dark:text-white">Jane Doe</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<div class="flex gap-0.5">
+<span class="material-symbols-outlined text-[16px] star-filled">star</span>
+<span class="material-symbols-outlined text-[16px] star-filled">star</span>
+<span class="material-symbols-outlined text-[16px] star-filled">star</span>
+<span class="material-symbols-outlined text-[16px] star-filled">star</span>
+<span class="material-symbols-outlined text-[16px] star-filled">star</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<p class="text-sm text-slate-600 dark:text-slate-400 line-clamp-1 max-w-[300px]">El personal fue increíblemente servicial durante mi cita de cardiología. ¡Instalaciones muy limpias!</p>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-primary opacity-0 group-hover:opacity-100 font-bold text-xs underline">Responder</button>
+</td>
+</tr>
+<tr class="hover:bg-slate-50 dark:hover:bg-[#101622]/50 transition-colors group">
+<td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-300">23 Oct, 2023</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="h-8 w-8 rounded-full bg-rose-500 flex items-center justify-center text-[10px] font-bold text-white uppercase">MS</div>
+<span class="text-sm font-semibold dark:text-white">Mark Smith</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<div class="flex gap-0.5">
+<span class="material-symbols-outlined text-[16px] star-filled">star</span>
+<span class="material-symbols-outlined text-[16px] star-filled">star</span>
+<span class="material-symbols-outlined text-[16px] star-filled">star</span>
+<span class="material-symbols-outlined text-[16px] star-filled">star</span>
+<span class="material-symbols-outlined text-[16px] text-slate-300 dark:text-slate-700">star</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<p class="text-sm text-slate-600 dark:text-slate-400 line-clamp-1 max-w-[300px]">El tiempo de espera fue un poco más largo de lo esperado, pero el tratamiento fue excelente.</p>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-primary opacity-0 group-hover:opacity-100 font-bold text-xs underline">Responder</button>
+</td>
+</tr>
+<tr class="hover:bg-slate-50 dark:hover:bg-[#101622]/50 transition-colors group">
+<td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-300">23 Oct, 2023</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="h-8 w-8 rounded-full bg-emerald-500 flex items-center justify-center text-[10px] font-bold text-white uppercase">AW</div>
+<span class="text-sm font-semibold dark:text-white">Alice Wong</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<div class="flex gap-0.5">
+<span class="material-symbols-outlined text-[16px] star-filled">star</span>
+<span class="material-symbols-outlined text-[16px] star-filled">star</span>
+<span class="material-symbols-outlined text-[16px] star-filled">star</span>
+<span class="material-symbols-outlined text-[16px] star-filled">star</span>
+<span class="material-symbols-outlined text-[16px] star-filled">star</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<p class="text-sm text-slate-600 dark:text-slate-400 line-clamp-1 max-w-[300px]">La mejor experiencia dental que he tenido en años. Recomiendo mucho al Dr. Brown.</p>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-primary opacity-0 group-hover:opacity-100 font-bold text-xs underline">Responder</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="px-6 py-4 bg-slate-50 dark:bg-[#101622]/50 flex items-center justify-center gap-4">
+<button class="text-slate-500 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<div class="flex items-center gap-2">
+<span class="h-8 w-8 rounded-lg bg-primary text-white text-xs font-bold flex items-center justify-center">1</span>
+<span class="h-8 w-8 rounded-lg text-slate-500 text-xs font-bold flex items-center justify-center hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors cursor-pointer">2</span>
+<span class="h-8 w-8 rounded-lg text-slate-500 text-xs font-bold flex items-center justify-center hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors cursor-pointer">3</span>
+</div>
+<button class="text-slate-500 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<div class="lg:col-span-4 flex flex-col gap-6">
+<div class="bg-white dark:bg-[#192233] p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex items-center justify-between mb-6">
+<h3 class="font-bold text-slate-900 dark:text-white">Estadísticas de la Clínica</h3>
+<span class="material-symbols-outlined text-slate-400">insights</span>
+</div>
+<div class="mb-8">
+<p class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-4">Evolución semanal</p>
+<div class="flex items-end justify-between h-32 gap-2">
+<div class="flex-1 bg-slate-100 dark:bg-[#232f48] rounded-t hover:bg-primary/40 transition-colors h-[40%]" title="Lun: 12"></div>
+<div class="flex-1 bg-slate-100 dark:bg-[#232f48] rounded-t hover:bg-primary/40 transition-colors h-[65%]" title="Mar: 18"></div>
+<div class="flex-1 bg-slate-100 dark:bg-[#232f48] rounded-t hover:bg-primary/40 transition-colors h-[50%]" title="Mié: 15"></div>
+<div class="flex-1 bg-primary rounded-t h-[90%]" title="Jue: 24"></div>
+<div class="flex-1 bg-slate-100 dark:bg-[#232f48] rounded-t hover:bg-primary/40 transition-colors h-[75%]" title="Vie: 20"></div>
+<div class="flex-1 bg-slate-100 dark:bg-[#232f48] rounded-t hover:bg-primary/40 transition-colors h-[30%]" title="Sáb: 8"></div>
+<div class="flex-1 bg-slate-100 dark:bg-[#232f48] rounded-t hover:bg-primary/40 transition-colors h-[20%]" title="Dom: 5"></div>
+</div>
+<div class="flex justify-between mt-2 text-[10px] text-slate-500 font-medium">
+<span>L</span><span>M</span><span>X</span><span>J</span><span>V</span><span>S</span><span>D</span>
+</div>
+</div>
+<div class="space-y-4">
+<div class="p-4 rounded-lg bg-slate-50 dark:bg-[#101622] flex items-center justify-between">
+<div>
+<p class="text-xs text-slate-500 dark:text-slate-400">Total de Reseñas</p>
+<p class="text-xl font-black text-slate-900 dark:text-white">1,240</p>
+</div>
+<span class="text-emerald-500 text-xs font-bold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]">trending_up</span> +12%
+                        </span>
+</div>
+<div class="p-4 rounded-lg bg-slate-50 dark:bg-[#101622] flex items-center justify-between">
+<div>
+<p class="text-xs text-slate-500 dark:text-slate-400">Tasa de Respuesta</p>
+<p class="text-xl font-black text-slate-900 dark:text-white">94%</p>
+</div>
+<span class="text-emerald-500 text-xs font-bold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> Objetivo cumplido
+                        </span>
+</div>
+</div>
+<a class="mt-8 flex items-center justify-center gap-2 w-full py-3 border border-dashed border-slate-300 dark:border-slate-700 rounded-lg text-sm text-slate-500 dark:text-slate-400 hover:border-primary hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined text-[18px]">archive</span>
+                    Ver Archivos Antiguos
+                </a>
+</div>
+<div class="bg-primary/10 p-6 rounded-xl border border-primary/20 shadow-sm">
+<div class="flex items-center gap-2 mb-3">
+<span class="material-symbols-outlined text-primary text-[20px]">auto_awesome</span>
+<h4 class="font-bold text-primary">Análisis Mensual</h4>
+</div>
+<p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+                    El sentimiento es mayoritariamente positivo para los servicios <strong>Dentales</strong>. Considere destacar la atención al paciente del Dr. Brown en la próxima actualización del perfil.
+                </p>
+</div>
+</div>
+</div>
+</main>
+<footer class="mt-12 border-t border-slate-200 dark:border-slate-800 py-8 px-10 text-center">
+<p class="text-sm text-slate-400">© 2023 CliniBot Professional Health Network. Todos los derechos reservados.</p>
+</footer>
+
+</body></html>
