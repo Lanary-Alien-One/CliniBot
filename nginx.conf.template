@@ -1,9 +1,9 @@
-# /etc/nginx/sites-available/clinibot
-# Sustituye 'tu-dominio.com' por tu dominio real (ej. panel.amor-amarillo.com)
+# /etc/nginx/sites-available/clinicool
+# Sustituye 'clinicool.es' por tu dominio real
 
 server {
     listen 80;
-    server_name tu-dominio.com www.tu-dominio.com;
+    server_name clinicool.es www.clinicool.es;
 
     # Frontend (Next.js)
     location / {
